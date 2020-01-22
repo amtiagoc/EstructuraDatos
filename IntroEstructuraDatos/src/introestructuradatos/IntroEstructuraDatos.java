@@ -16,6 +16,7 @@ public class IntroEstructuraDatos {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        int[] x = {9,8,5,8,1};
         System.out.println("Hola Mundo");
     }
     
