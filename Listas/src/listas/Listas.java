@@ -5,6 +5,9 @@
  */
 package listas;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author s208e19
@@ -26,17 +29,34 @@ public class Listas {
 //        n2.setNextNode(n3);
 //        n3.setNextNode(n4);
 //        n4.setNextNode(n5);
-        
-        SinglyLinkedList miLista = new SinglyLinkedList();
-        miLista.addOrdered(99);
-        miLista.addOrdered(66);
-        miLista.addOrdered(55);
+
+        SinglyLinkedList<Integer> miLista = new SinglyLinkedList<>();
+        miLista.addOrdered(11);
+        miLista.addOrdered(33);
+        miLista.addOrdered(4);
         miLista.addOrdered(88);
-        miLista.addOrdered(77);
+        miLista.addOrdered(99);
         miLista.addOrdered(22);
-        miLista.addOrdered(44);
-                
-        System.out.println(miLista.showData());
+        
+        SinglyLinkedList<Double> miListica = new SinglyLinkedList<>();
+        miListica.addOrdered(1.1);
+        miListica.addOrdered(3.3);
+        miListica.addOrdered(4.0);
+        miListica.addOrdered(8.8);
+        miListica.addOrdered(9.9);
+        miListica.addOrdered(2.2);
+        miListica.addLast(6.6);
+        miListica.addLast(7.7);
+        
+        try {
+            miListica.deleteLast();
+            miListica.deleteLast();
+            miListica.deleteLast();
+        } catch (Exception ex) {
+            Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        System.out.println(miListica.showData());
         
     }
     

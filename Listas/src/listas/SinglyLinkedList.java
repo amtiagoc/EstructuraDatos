@@ -9,37 +9,39 @@ package listas;
  *
  * @author s208e19
  */
-public class SinglyLinkedList implements Ilist {
+public class SinglyLinkedList<T extends Comparable> implements Ilist<T> {
 
-    private Node head;
+    private Node<T> head;
+    private int x;
 
     public SinglyLinkedList() {
         this.head = null;
     }
 
     @Override
-    public void add(int d) {
+    public void add(T d) {
         //crear el nuevo nodo
         //el siguiente del nuevo nodo = cabeza
         //actualizar cabeza = nuevo nodo
 
-        Node newNode = new Node(d);
+        Node<T> newNode = new Node<>(d);
         newNode.setNextNode(this.head);
         this.head = newNode;
 
     }
 
     @Override
-    public void addOrdered(int d) {
+    public void addOrdered(T d) {
         /*
         Crear un nodo para el nuevo dato.
         Si la lista esta vacía, o el valor del primer elemento de la lista 
         es mayor que el nuevo, insertar el nuevo nodo en la primera posición 
         de la lista y modificar la cabecera respectivamente.
-
+        
          */
-        Node newNode = new Node(d);
-        if (isEmpty() || this.head.getData() > d) {
+
+        Node<T> newNode = new Node<>(d);
+        if (isEmpty() || d.compareTo(this.head.getData()) == -1) {
             newNode.setNextNode(this.head);
             this.head = newNode;
         } else {
@@ -52,18 +54,19 @@ public class SinglyLinkedList implements Ilist {
             el dato a insertar.
 
              */
-            Node current = this.head;
-            while (current.getNextNode() != null && current.getNextNode().getData()<d) {
+            Node<T> current = this.head;//
+            while (current.getNextNode() != null
+                    && d.compareTo(current.getNextNode().getData()) == 1) {
                 current = current.getNextNode();
             }
             /*
             Con esto se señala al nodo adecuado, 
             a continuación insertar el nuevo nodo a continuación de él.
-            */
-            
+             */
+
             newNode.setNextNode(current.getNextNode());
             current.setNextNode(newNode);
-            
+
         }
 
     }
@@ -76,12 +79,50 @@ public class SinglyLinkedList implements Ilist {
     @Override
     public String showData() {
         String data = "";
-        Node current = this.head;
+        Node<T> current = this.head;
         while (current != null) {
             data = data + current.getData() + " ";
             current = current.getNextNode();
         }
         return data;
+    }
+
+    @Override
+    public void addLast(T d) {
+        if (isEmpty()) {
+            add(d);
+        } else {
+            Node<T> newNode = new Node<>(d);
+            Node<T> current = this.head;
+            while (current.getNextNode() != null) {
+                current = current.getNextNode();
+            }
+            current.setNextNode(newNode);
+        }
+
+    }
+
+    @Override
+    public void delete() throws Exception {
+        if (isEmpty()) {
+            throw new Exception("No existen datos por borrar");
+        } else {
+            this.head = head.getNextNode();
+        }
+    }
+
+    @Override
+    public void deleteLast() throws Exception {
+        if (isEmpty()) {
+            throw new Exception("No existen datos por borrar");
+        } else {
+            Node<T> current = this.head;
+            while (current.getNextNode().getNextNode() != null) {
+                current = current.getNextNode();
+            }
+            current.setNextNode(null);
+        }
+
     }
 
 }

@@ -9,12 +9,12 @@ package listas;
  *
  * @author s208e19
  */
-public class Node {
+public class Node<T> {
 
-    private int data;
-    private Node nextNode;
+    private T data;
+    private Node<T> nextNode;
 
-    public Node(int d) {
+    public Node(T d) {
         this.data = d;
         nextNode = null;
     }
@@ -22,14 +22,14 @@ public class Node {
     /**
      * @return the data
      */
-    public int getData() {
+    public T getData() {
         return data;
     }
 
     /**
      * @param data the data to set
      */
-    public void setData(int data) {
+    public void setData(T data) {
         this.data = data;
     }
 
