@@ -19,6 +19,36 @@ public class Listas {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+
+//
+//        DoubleNode<Integer> n1 = new DoubleNode<>(55);
+//        DoubleNode<Integer> n2 = new DoubleNode<>(66,n1,null);
+//        DoubleNode<Integer> n3 = new DoubleNode<>(77,n2,null);
+//        n1.setNextNode(n2);
+//        n2.setNextNode(n3);
+        DoublyLinkedList<Integer> myDoublelist = new DoublyLinkedList<>();
+        myDoublelist.addLast(55);
+        myDoublelist.addLast(66);
+        myDoublelist.addLast(77);
+        myDoublelist.addLast(88);
+        
+        System.out.println(myDoublelist.searchData(77));
+        
+        
+        
+        try {
+            myDoublelist.deleteLast();
+            myDoublelist.deleteLast();
+            myDoublelist.delete();
+            myDoublelist.deleteLast();
+            myDoublelist.deleteLast();
+        } catch (Exception ex) {
+            Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        System.out.println(myDoublelist.showData());
+        System.out.println(myDoublelist.showDataReverse());
+
 //        Node n1 = new Node(55);
 //        Node n2 = new Node(66);
 //        Node n3 = new Node(77);
@@ -29,7 +59,6 @@ public class Listas {
 //        n2.setNextNode(n3);
 //        n3.setNextNode(n4);
 //        n4.setNextNode(n5);
-
         SinglyLinkedList<Integer> miLista = new SinglyLinkedList<>();
         miLista.addOrdered(11);
         miLista.addOrdered(33);
@@ -37,7 +66,7 @@ public class Listas {
         miLista.addOrdered(88);
         miLista.addOrdered(99);
         miLista.addOrdered(22);
-        
+
         SinglyLinkedList<Double> miListica = new SinglyLinkedList<>();
         miListica.addOrdered(1.1);
         miListica.addOrdered(3.3);
@@ -47,7 +76,7 @@ public class Listas {
         miListica.addOrdered(2.2);
         miListica.addLast(6.6);
         miListica.addLast(7.7);
-        
+
         try {
             miListica.deleteLast();
             miListica.deleteLast();
@@ -55,9 +84,9 @@ public class Listas {
         } catch (Exception ex) {
             Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         System.out.println(miListica.showData());
-        
+
     }
-    
+
 }
