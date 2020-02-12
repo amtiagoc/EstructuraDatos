@@ -27,11 +27,15 @@ public class Listas {
 //        n1.setNextNode(n2);
 //        n2.setNextNode(n3);
         DoublyLinkedList<Integer> myDoublelist = new DoublyLinkedList<>();
-        myDoublelist.addLast(55);
-        myDoublelist.addLast(66);
-        myDoublelist.addLast(77);
-        myDoublelist.addLast(88);
-        
+        myDoublelist.addOrdered(66);
+        myDoublelist.addOrdered(11);
+        myDoublelist.addOrdered(99);
+        myDoublelist.addOrdered(33);
+        myDoublelist.addOrdered(44);
+        myDoublelist.addOrdered(22);
+        myDoublelist.addOrdered(101);
+
+        System.out.println(myDoublelist.showData());
         System.out.println(myDoublelist.searchData(77));
         
         
@@ -66,7 +70,19 @@ public class Listas {
         miLista.addOrdered(88);
         miLista.addOrdered(99);
         miLista.addOrdered(22);
-
+        miLista.deletaData(88);
+        
+        SinglyLinkedList<Integer> miLista2 = new SinglyLinkedList<>();
+        miLista2.addOrdered(11);
+        miLista2.addOrdered(33);
+        miLista2.addOrdered(4);
+        miLista2.addOrdered(88);
+        miLista2.addOrdered(99);
+        miLista2.addOrdered(22);
+        miLista2.deletaData(88);
+        
+        System.out.println("Son iguales?:" + miLista.checkEqualList(miLista2));
+        
         SinglyLinkedList<Double> miListica = new SinglyLinkedList<>();
         miListica.addOrdered(1.1);
         miListica.addOrdered(3.3);
@@ -76,6 +92,16 @@ public class Listas {
         miListica.addOrdered(2.2);
         miListica.addLast(6.6);
         miListica.addLast(7.7);
+        
+        try {
+            miListica.averageList();
+         
+        }catch(ArithmeticException exA) {
+            System.out.println("Error: " + exA.getMessage());
+        }
+        catch (Exception ex) {
+            Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         try {
             miListica.deleteLast();
