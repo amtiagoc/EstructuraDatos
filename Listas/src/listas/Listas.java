@@ -26,6 +26,51 @@ public class Listas {
 //        DoubleNode<Integer> n3 = new DoubleNode<>(77,n2,null);
 //        n1.setNextNode(n2);
 //        n2.setNextNode(n3);
+//        CircularDoublyLinkedList<Integer> myCDLL = new CircularDoublyLinkedList<>();
+//        myCDLL.addLast(99);
+//        myCDLL.addLast(88);
+//        myCDLL.addLast(77);
+//        myCDLL.addLast(66);
+//        myCDLL.addLast(55);
+//
+//        System.out.println("Contenido de la lista simple: " + myCDLL.showData());
+//        try {
+//            myCDLL.delete();
+//            myCDLL.delete();
+//            myCDLL.delete();
+//            myCDLL.delete();
+//            myCDLL.delete();
+//      
+//     
+//        } catch (Exception e) {
+//            System.out.println("Error: " + e.getMessage());
+//        }    
+        
+        
+ //       System.out.println("Contenido de la lista simple despues del borrado: " + myCDLL.showData());
+
+        CircularSinglyLinkedList<Integer> myCSLL = new CircularSinglyLinkedList<>();
+        myCSLL.add(99);
+        myCSLL.add(88);
+        myCSLL.add(77);
+        myCSLL.add(66);
+        myCSLL.add(55);
+        
+        System.out.println("Contenido de la lista simple antes de borrar: " + myCSLL.showData());
+        try {
+            myCSLL.delete();
+            myCSLL.delete();
+            myCSLL.delete();
+            myCSLL.delete();
+            myCSLL.delete();
+            myCSLL.delete();
+        } catch (Exception e) {
+            System.out.println("Error de borrado: " + e.getMessage());
+        }
+        
+        
+        System.out.println("Contenido de la lista simple despues de borrar: " + myCSLL.showData());
+
         DoublyLinkedList<Integer> myDoublelist = new DoublyLinkedList<>();
         myDoublelist.addOrdered(66);
         myDoublelist.addOrdered(11);
@@ -37,9 +82,7 @@ public class Listas {
 
         System.out.println(myDoublelist.showData());
         System.out.println(myDoublelist.searchData(77));
-        
-        
-        
+
         try {
             myDoublelist.deleteLast();
             myDoublelist.deleteLast();
@@ -71,7 +114,7 @@ public class Listas {
         miLista.addOrdered(99);
         miLista.addOrdered(22);
         miLista.deletaData(88);
-        
+
         SinglyLinkedList<Integer> miLista2 = new SinglyLinkedList<>();
         miLista2.addOrdered(11);
         miLista2.addOrdered(33);
@@ -80,9 +123,9 @@ public class Listas {
         miLista2.addOrdered(99);
         miLista2.addOrdered(22);
         miLista2.deletaData(88);
-        
+
         System.out.println("Son iguales?:" + miLista.checkEqualList(miLista2));
-        
+
         SinglyLinkedList<Double> miListica = new SinglyLinkedList<>();
         miListica.addOrdered(1.1);
         miListica.addOrdered(3.3);
@@ -92,14 +135,13 @@ public class Listas {
         miListica.addOrdered(2.2);
         miListica.addLast(6.6);
         miListica.addLast(7.7);
-        
+
         try {
             miListica.averageList();
-         
-        }catch(ArithmeticException exA) {
+
+        } catch (ArithmeticException exA) {
             System.out.println("Error: " + exA.getMessage());
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             Logger.getLogger(Listas.class.getName()).log(Level.SEVERE, null, ex);
         }
 
