@@ -7,6 +7,7 @@ package listas;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.Stack;
 
 /**
  *
@@ -19,7 +20,60 @@ public class Listas {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        LinkedStack<Integer> duracell = new LinkedStack<>();
+        duracell.push(99);
+        duracell.push(88);
+        duracell.push(77);
+        duracell.push(66);
+        duracell.push(55);
+        
+        System.out.println("El dato eliminado fue:" + duracell.pop());
+        System.out.println("El dato eliminado fue:" + duracell.pop());
+        System.out.println("El dato eliminado fue:" + duracell.pop());
+        System.out.println("El dato eliminado fue:" + duracell.pop());
+        System.out.println("El dato eliminado fue:" + duracell.pop());
+        System.out.println("El dato eliminado fue:" + duracell.pop());
+        System.out.println("El dato eliminado fue:" + duracell.pop());
+        System.out.println("El dato eliminado fue:" + duracell.pop());
+        System.out.println("El dato eliminado fue:" + duracell.pop());
 
+        
+        
+        System.out.println("");
+        
+        ArrayStack varta = new ArrayStack(5);
+        varta.push(77);
+        varta.push(88);
+        varta.push(99);
+        varta.push(101);
+        varta.push(101);
+        varta.push(999);
+        varta.push(888);
+        varta.push(777);
+        varta.push(666);
+        varta.push(555);
+//        varta.pop();
+//        varta.pop();
+//        varta.pop();
+//        varta.pop();
+//        varta.pop();
+//        varta.pop();
+//        varta.pop();
+//        varta.pop();
+ //       System.out.println(varta.pop());
+        System.out.println("");
+//        Stack<Integer> varta = new Stack<>();
+//        varta.push(99);
+//        varta.push(88);
+//        varta.push(77);
+//        varta.push(66);
+//        varta.push(55);
+
+        
+        
+      //  System.out.println("Siguiente dato a salir: " + varta.search(9878));
+           
 //
 //        DoubleNode<Integer> n1 = new DoubleNode<>(55);
 //        DoubleNode<Integer> n2 = new DoubleNode<>(66,n1,null);

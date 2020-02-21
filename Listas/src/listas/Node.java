@@ -19,6 +19,11 @@ public class Node<T> {
         nextNode = null;
     }
 
+    public Node(T d, Node<T> nextNode) {
+        this.data = d;
+        this.nextNode = nextNode;
+    }
+
     /**
      * @return the data
      */
