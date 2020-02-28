@@ -9,7 +9,7 @@ package listas;
  *
  * @author s208e19
  */
-public class SinglyLinkedList<T extends Comparable> implements Ilist<T> {
+public class SinglyLinkedList<T extends Number & Comparable> implements Ilist<T> {
 
     private Node<T> head;
     private int x;
@@ -27,6 +27,7 @@ public class SinglyLinkedList<T extends Comparable> implements Ilist<T> {
         Node<T> newNode = new Node<>(d);
         newNode.setNextNode(this.head);
         this.head = newNode;
+        x++;
 
     }
 
@@ -68,6 +69,7 @@ public class SinglyLinkedList<T extends Comparable> implements Ilist<T> {
             current.setNextNode(newNode);
 
         }
+        x++;
 
     }
 
@@ -99,7 +101,7 @@ public class SinglyLinkedList<T extends Comparable> implements Ilist<T> {
             }
             current.setNextNode(newNode);
         }
-
+        x++;
     }
 
     @Override
@@ -109,6 +111,7 @@ public class SinglyLinkedList<T extends Comparable> implements Ilist<T> {
         } else {
             this.head = head.getNextNode();
         }
+        x--;
     }
 
     @Override
@@ -121,6 +124,74 @@ public class SinglyLinkedList<T extends Comparable> implements Ilist<T> {
                 current = current.getNextNode();
             }
             current.setNextNode(null);
+        }
+        x--;
+    }
+
+    public void deletaData(T d) {
+        Node<T> current = this.head;
+        Node<T> previous = current;
+        while (current.getData() != d) {
+            previous = current;
+            current = current.getNextNode();
+        }
+
+        previous.setNextNode(current.getNextNode());
+        x--;
+    }
+
+    /**
+     * @return the x
+     */
+    public int getX() {
+        return x;
+    }
+
+    public double averageList() throws Exception {
+
+        int sum = 0;
+        int countNodes = 0;
+        Node<T> current = head;
+
+        if (!isEmpty() && current.getData() instanceof Integer) {
+
+            while (current != null) {
+                sum += current.getData().intValue();
+                countNodes++;
+                current = current.getNextNode();
+            }
+            return sum / countNodes;
+
+        } else {
+            throw new Exception("No es posible realizar el promedio");
+        }
+
+    }
+
+    //Determinar si otra lista es igual.
+    public boolean checkEqualList(SinglyLinkedList<T> otherList) {
+
+        if (getX() == otherList.getX()) {
+            
+            Node<T> current = head;
+            Node<T> currentotherList = otherList.head;
+            int countData = 0;
+            while (current != null) {
+                if (current.getData() == currentotherList.getData()) {
+                    countData++;
+                }
+                current = current.getNextNode();
+                currentotherList = currentotherList.getNextNode();
+            }
+
+            if (countData == getX()) {
+                return true;
+            } else {
+                return false;
+            }
+        }else{
+        
+            return false;
         }
 
     }
