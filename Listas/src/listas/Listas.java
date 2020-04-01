@@ -137,9 +137,7 @@ public class Listas {
 
         System.out.println("Contenido de la lista simple antes de borrar: " + myCSLL.showData());
         try {
-            myCSLL.delete();
-            myCSLL.delete();
-            myCSLL.delete();
+
             myCSLL.delete();
             myCSLL.delete();
             myCSLL.delete();
@@ -200,7 +198,10 @@ public class Listas {
         miLista2.addOrdered(88);
         miLista2.addOrdered(99);
         miLista2.addOrdered(22);
-        miLista2.deletaData(88);
+        System.out.println(miLista2.showData());
+        System.out.println("----");
+        miLista2.showDataReverseR();
+        System.out.println("Total de datos de la lista2: " + miLista2.countDataR());
 
         System.out.println("Son iguales?:" + miLista.checkEqualList(miLista2));
 
@@ -215,7 +216,7 @@ public class Listas {
         miListica.addLast(7.7);
 
         try {
-            miListica.averageList();
+            //miListica.averageList();
 
         } catch (ArithmeticException exA) {
             System.out.println("Error: " + exA.getMessage());

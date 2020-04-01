@@ -17,17 +17,20 @@ public class EjemploRecursividad {
     public static void main(String[] args) {
         // TODO code application logic here
         Recursividad re = new Recursividad();
-        System.out.println("Sumuatoria de 5");
-        System.out.println(re.Sumatoria(5));
-        System.out.println("Factorial de 5");
-        System.out.println(re.Factorial(5));
-        System.out.println("n-avo dato de Fibonacci");
-        System.out.println(re.Fibo1(3));
-        System.out.println("Serie Fibonacci método 1");
-        re.Fibo2(10);
-        System.out.println("");
-        System.out.println("Serie Fibonacci método 2");
-        re.FibR(10);
+        re.Factorial(5);
+//        
+//        System.out.println("7vo termino de tribonacci"+ re.Fibo1(3));
+//        System.out.println("Sumuatoria de 5");
+//        System.out.println(re.Sumatoria(5));
+//        System.out.println("Factorial de 5");
+//        System.out.println(re.Factorial(5));
+//        System.out.println("n-avo dato de Fibonacci");
+//        System.out.println(re.Fibo1(3));
+//        System.out.println("Serie Fibonacci método 1");
+//        re.Fibo2(10);
+//        System.out.println("");
+//        System.out.println("Serie Fibonacci método 2");
+//        re.FibR(10);
     }
     
   

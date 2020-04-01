@@ -168,11 +168,38 @@ public class SinglyLinkedList<T extends Number & Comparable> implements Ilist<T>
 
     }
 
+    //contar el total de nodos en la lista
+    //de forma recursiva
+    public int countDataR() {
+        return countDataR(head);
+    }
+
+    private int countDataR(Node current) {
+        //caso el base o la condicion de finalizacion
+        if (current == null) {
+            return 0;
+        } else {
+            return countDataR(current.getNextNode()) + 1;
+        }
+    }
+
+    public void showDataReverseR() {
+        showDataPrivate(head);
+    }
+
+    private void showDataPrivate(Node<T> a) {
+
+        if (a != null) {
+            showDataPrivate(a.getNextNode());
+            System.out.print(a.getData() + " ");
+        }
+    }
+
     //Determinar si otra lista es igual.
     public boolean checkEqualList(SinglyLinkedList<T> otherList) {
 
         if (getX() == otherList.getX()) {
-            
+
             Node<T> current = head;
             Node<T> currentotherList = otherList.head;
             int countData = 0;
@@ -189,8 +216,8 @@ public class SinglyLinkedList<T extends Number & Comparable> implements Ilist<T>
             } else {
                 return false;
             }
-        }else{
-        
+        } else {
+
             return false;
         }
 
