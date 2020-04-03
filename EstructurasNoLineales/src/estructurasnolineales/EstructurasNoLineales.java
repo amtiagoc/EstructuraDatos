@@ -16,16 +16,26 @@ public class EstructurasNoLineales {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+
         BinarySearchTree pino = new BinarySearchTree(8);
-        pino.Add(3);
-        pino.Add(9);
-        pino.Add(2);
-        pino.Add(11);
+        try {
+            pino.Add(3);
+            pino.Add(9);
+            pino.Add(6);
+            pino.Add(2);
+            pino.Add(11);
+            pino.Add(1);
+            pino.InOrden();
+            pino.Delete(3);
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
         System.out.println("");
-        
+
         pino.InOrden();
-        System.out.println(pino.Search(88));
+        //System.out.println(pino.Search(88));
     }
-    
+
 }

@@ -10,9 +10,11 @@ package estructurasnolineales;
  * @author samaniw
  */
 public class BinaryNode {
+
     private int data;
     private BinaryNode left;
     private BinaryNode right;
+    private boolean ChildPosition;
 
     public BinaryNode(int data) {
         setData(data);
@@ -20,8 +22,23 @@ public class BinaryNode {
         setRight(null);
     }
 
-    
-    
+    public boolean isLeaf() {
+        return ((left == null) && (right == null)) ? true : false;
+    }
+
+    public boolean hasOneChild() {
+        if (left == null && right != null) {
+            ChildPosition = true;
+            return true;
+        } else if (left != null && right == null) {
+            ChildPosition = false;
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
     /**
      * @return the data
      */
@@ -62,5 +79,12 @@ public class BinaryNode {
      */
     public void setRight(BinaryNode right) {
         this.right = right;
+    }
+
+    /**
+     * @return the ChildPosition
+     */
+    public boolean isChildPosition() {
+        return ChildPosition;
     }
 }
