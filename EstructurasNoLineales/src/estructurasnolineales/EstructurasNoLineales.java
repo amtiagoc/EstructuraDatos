@@ -32,43 +32,9 @@ public class EstructurasNoLineales {
         BinarySearchTree pino = new BinarySearchTree(8);
         try {
             pino.Add(3);
-            pino.Add(9);
-            pino.Add(6);
-            pino.Add(2);
-            pino.Add(11);
-            pino.Add(1);
-            pino.Add(1);
-            pino.Add(1);
-            pino.Add(1);
-            pino.Add(1);
-            pino.Add(1);
-            pino.Add(1);
-            pino.Add(1);
-            pino.Add(1);
-            pino.Add(1);
-            pino.Add(1);
-            pino.Add(1);
-            pino.Add(1);
-            pino.Add(1);
-            pino.Add(1);
+            pino.Add(9);    
             pino.InOrden();
             pino.Delete(3);
-            pino.Delete(8);
-            pino.Delete(8);
-            pino.Delete(8);
-            pino.Delete(8);
-            pino.Delete(8);
-            pino.Delete(8);
-            pino.Delete(8);
-            pino.Delete(8);
-            pino.Delete(8);
-            pino.Delete(8);
-            pino.Delete(8);
-            pino.Delete(8);
-            pino.Delete(8);
-            pino.Delete(8);
-            pino.Delete(8);
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

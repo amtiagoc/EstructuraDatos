@@ -23,18 +23,39 @@ public class BinarySearchTree {
         root = new BinaryNode(data);
     }
 
+    //Punto 1
     public void InOrden() {
         InOrden(root);
     }
 
     private void InOrden(BinaryNode currentRoot) {
-
         if (currentRoot != null) {
             InOrden(currentRoot.getLeft());
-            System.out.print(currentRoot.getData());
+            System.out.print(currentRoot.getData() + " ");
             InOrden(currentRoot.getRight());
         }
+    }
 
+    //Punto 2
+    public void Postorden() {
+        //...
+    }
+
+    //Punto 3
+    public void PreOrden() {
+        //...
+    }
+
+    //Punto 4
+    public int CountNodes() {
+        //...
+        return 0;
+    }
+
+    //Punto 5
+    public int CountLeafs() {
+        //...
+        return 0;
     }
 
     public void Add(int data) {
@@ -89,43 +110,61 @@ public class BinarySearchTree {
         }
     }
 
+    //Punto 6
     public void Delete(int data) {
         if (root == null) {
-            System.out.println("Árbol vacío");
+            System.out.print("Árbol vacío");
         } else {
             Delete(data, root);
         }
     }
 
     private void Delete(int data, BinaryNode currentRoot) {
-        
+
         BinaryNode v = Search(data);
-        if(v.isLeaf()){
-            if(position){
+        if (v.isLeaf()) {
+            if (position) {
                 father.setRight(null);
-            }else{
+            } else {
                 father.setLeft(null);
             }
-        }else if(v.hasOneChild()){
-            if(v.isChildPosition()){
+        } else if (v.hasOneChild()) {
+            if (v.isChildPosition()) {
                 father.setRight(v.getRight());
-            }else{
+            } else {
                 father.setLeft(v.getLeft());
             }
-        }else{
+        } else {
             BinaryNode minimum = getMinor(v.getRight());
             Delete(minimum.getData());
             v.setData(minimum.getData());
-            //tarea:
-            //1)validar el proceso de borrado en un árbol de 8 niveles
-            //2)Completar el proceso de borrado para un solo nodo
         }
     }
-    
-    public BinaryNode getMinor(BinaryNode currentRoot){
-        if(currentRoot.getLeft()==null){
+
+    //Punto 7
+    public int LastLevel() {
+        //...
+        return 0;
+    }
+
+    //Punto 8
+    public void LevelOrder() {
+        //...
+        /* 
+        Para mostrar los datos se recomienda usar:
+            System.out.print(x.getData()+" ");
+        donde x representa un nodo del árbol
+
+        Para generar un salto de linea se recomienda usar:
+            System.out.print("\n");
+        
+         */
+    }
+
+    public BinaryNode getMinor(BinaryNode currentRoot) {
+        if (currentRoot.getLeft() == null) {
             return currentRoot;
-        }else{
+        } else {
             return getMinor(currentRoot.getLeft());
         }
     }
