@@ -24,7 +24,9 @@ public class EstructurasNoLineales {
         maxData.insert(53);
         maxData.insert(28);
         maxData.insert(47);
-        maxData.insert(22);   
+        maxData.insert(22);
+        System.out.println(maxData.getDataHeap());
+        maxData.ExtractMax();
         System.out.println(maxData.getDataHeap());
 
         BinarySearchTree pino = new BinarySearchTree(8);
