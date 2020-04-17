@@ -17,6 +17,16 @@ public class EstructurasNoLineales {
     public static void main(String[] args) {
         // TODO code application logic here
 
+        MaxHeap maxData = new MaxHeap();
+        //31,51,53,28,47,22
+        maxData.insert(31);
+        maxData.insert(51);
+        maxData.insert(53);
+        maxData.insert(28);
+        maxData.insert(47);
+        maxData.insert(22);   
+        System.out.println(maxData.getDataHeap());
+
         BinarySearchTree pino = new BinarySearchTree(8);
         try {
             pino.Add(3);
@@ -25,9 +35,38 @@ public class EstructurasNoLineales {
             pino.Add(2);
             pino.Add(11);
             pino.Add(1);
+            pino.Add(1);
+            pino.Add(1);
+            pino.Add(1);
+            pino.Add(1);
+            pino.Add(1);
+            pino.Add(1);
+            pino.Add(1);
+            pino.Add(1);
+            pino.Add(1);
+            pino.Add(1);
+            pino.Add(1);
+            pino.Add(1);
+            pino.Add(1);
+            pino.Add(1);
             pino.InOrden();
             pino.Delete(3);
-            
+            pino.Delete(8);
+            pino.Delete(8);
+            pino.Delete(8);
+            pino.Delete(8);
+            pino.Delete(8);
+            pino.Delete(8);
+            pino.Delete(8);
+            pino.Delete(8);
+            pino.Delete(8);
+            pino.Delete(8);
+            pino.Delete(8);
+            pino.Delete(8);
+            pino.Delete(8);
+            pino.Delete(8);
+            pino.Delete(8);
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
