@@ -16,22 +16,43 @@ public class EstructurasNoLineales {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-
-        Graph g1 = new Graph(4);
+        DGrahp g0 = new DGrahp();
+        g0.addNode("A");
+        g0.addNode("D");
+        g0.addNode("B");
+        g0.addNode("C");
+        g0.addNode("E");
+        g0.addEdge("A", "B", 1);
+        g0.addEdge("A", "C", 1);
+        g0.addEdge("A", "E", 3);
+        g0.addEdge("C", "E", 1);
+        
+        g0.showAList();
+        Graph g1 = new Graph(7);
         g1.addEdge(0, 1);
-        g1.addEdge(1, 2);
-        g1.addEdge(2, 0);
-        g1.addEdge(3, 0);
-        g1.addEdge(3, 1);
-        g1.addEdge(3, 2);
+        g1.addEdge(0, 2);
+        g1.addEdge(1, 3);
+        g1.addEdge(2, 3);
+        g1.addEdge(2, 4);
+        g1.addEdge(2, 5);
+        g1.addEdge(3, 6);
+        g1.addEdge(4, 6);
+        g1.addEdge(4, 5);
+
         //...
-        g1.deleteEdge(0, 1);
-        g1.deleteEdge(1, 2);
+//        g1.deleteEdge(0, 1);
+//        g1.deleteEdge(1, 2);
         System.out.println("Matriz de adyacencias");
         System.out.println(g1.showAMatrix());
         System.out.println("Lista de adyacencias");
         System.out.println(g1.showAList());
-        
+
+        System.out.println("Recorrido en profundidad");
+        g1.DFS(0);
+        System.out.println("");
+        System.out.println("Recorrido en anchura");
+        g1.BFS(0);
+        System.out.println("");
         MaxHeap maxData = new MaxHeap();
         //31,51,53,28,47,22
         maxData.insert(31);
@@ -71,6 +92,10 @@ public class EstructurasNoLineales {
             System.out.println("\n");
             System.out.println("El arbol por niveles: ");
             pino1.LevelOrder();
+            pino.Add(3);
+            pino.Add(9);
+            pino.InOrden();
+            pino.Delete(3);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

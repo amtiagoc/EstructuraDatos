@@ -33,7 +33,7 @@ public class Graph {
 
     public void deleteEdge(int source, int destination) {
         aMatrix[source][destination] = false;
-        aList[source].remove((Object)destination);
+        aList[source].remove((Object) destination);
     }
 
     public String showAMatrix() {
@@ -59,6 +59,40 @@ public class Graph {
             List += "\n";
         }
         return List;
+    }
+
+    public void DFS(int source) {
+        boolean visited[] = new boolean[totalNodes];
+        DFS(source, visited);
+    }
+
+    private void DFS(int source, boolean visited[]) {
+        visited[source] = true;
+        System.out.print(source + " ");
+        for (int v : aList[source]) {
+            if (!visited[v]) {
+                DFS(v, visited);
+            }
+        }
+    }
+
+    public void BFS(int source) {
+        boolean visited[] = new boolean[totalNodes];
+        LinkedList<Integer> queue = new LinkedList<>();
+
+        visited[source] = true;
+        queue.add(source);
+
+        while (!queue.isEmpty()) {
+            source = queue.poll();
+            System.out.print(source + " ");
+            for (int v : aList[source]) {
+                if (!visited[v]) {
+                     visited[v] = true;
+                     queue.add(v);
+                }
+            }
+        }
     }
 
 }
