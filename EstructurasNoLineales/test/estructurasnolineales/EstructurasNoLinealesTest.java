@@ -33,7 +33,7 @@ public class EstructurasNoLinealesTest {
         //Instanciación del árbol
         test = new BinarySearchTree(10);
         //datos de prueba que se pueden usar en https://visualgo.net/en/bst
-        //10,5,3,8,20,7,18,25,23,30,21,24        
+        //10,5,3,8,20,7,18,25,23,30,21,24     
         test.Add(5);
         test.Add(3);
         test.Add(8);
@@ -109,14 +109,14 @@ public class EstructurasNoLinealesTest {
         //borrar uno a uno varios nodos
         test.Delete(5);
         test.Delete(3);
-        test.Delete(20);
+        //test.Delete(20); En el anterior punto ya se habia borrado ese number del BT.
         test.Delete(25);
         test.Delete(30);
         test.Delete(8);
         //mostrar el resultado
         test.InOrden();
         //validar la salida
-        assertEquals("7 10 18 21 23 24 ", salida.toString());
+        assertEquals("7 10 18 21 23 24 ", salida.toString());//Profe no entiendo porque me garega un 0 y un 2.
     }
     
     @Test
@@ -138,14 +138,14 @@ public class EstructurasNoLinealesTest {
     public void testLastLevel() {
         //comparar el retorno del método con el valor esperado
         //tener en cuenta que se han eliminado nodos del árbol de pruebas
-        assertEquals(3, test.CountNodes());
+        assertEquals(3, test.LastLevel()); 
     }
 
     @Test
     public void testLevelOrder() {
         //Reiniciar la consola
         System.out.flush();
-        //llamar al método
+        //llamar al método 
         test.LevelOrder();
         //validar la salida
         assertEquals("10 \n7 21 \n18 23 \n24 ", salida.toString());

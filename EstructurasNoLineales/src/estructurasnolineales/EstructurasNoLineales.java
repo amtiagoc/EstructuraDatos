@@ -44,20 +44,36 @@ public class EstructurasNoLineales {
         maxData.ExtractMax();
         System.out.println(maxData.getDataHeap());
 
-        BinarySearchTree pino = new BinarySearchTree(8);
+         //10,5,3,8,20,7,18,25,23,30,21,24   
+        BinarySearchTree pino1 = new BinarySearchTree(10);
         try {
-            pino.Add(3);
-            pino.Add(9);    
-            pino.InOrden();
-            pino.Delete(3);
+            pino1.Add(5);
+            pino1.Add(3);    
+            pino1.Add(8);    
+            pino1.Add(20);    
+            pino1.Add(7);    
+            pino1.Add(18);    
+            pino1.Add(25);    
+            pino1.Add(23);    
+            pino1.Add(30);    
+            pino1.Add(21);    
+            pino1.Add(24);
+            pino1.InOrden();
+            System.out.println("numero de niveles: "+pino1.LastLevel());
+            System.out.println("\n");
+            pino1.Delete(20);
+            pino1.Delete(5);
+            pino1.Delete(3);
+            pino1.Delete(25);
+            pino1.Delete(30);
+            pino1.Delete(8);
+            pino1.InOrden();
+            System.out.println("\n");
+            System.out.println("El arbol por niveles: ");
+            pino1.LevelOrder();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
-        System.out.println("");
-
-        pino.InOrden();
-        //System.out.println(pino.Search(88));
     }
 
 }
